@@ -1,0 +1,24 @@
+{
+  "name": "express-rate-limiter",
+  "version": "1.0.0",
+  "description": "Robust implementation of various rate limiting algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoganKloft/express-rate-limiter.git"
+  },
+  "keywords": [
+    "middleware",
+    "ratelimit",
+    "rate-limit"
+  ],
+  "author": "Logan Kloft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoganKloft/express-rate-limiter/issues"
+  },
+  "homepage": "https://github.com/LoganKloft/express-rate-limiter#readme"
+}
