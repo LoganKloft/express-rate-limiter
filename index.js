@@ -1,39 +1,35 @@
 // This package supports rate limiting...
-// per API
-// per Endpoint
+// 1) globally
+// 2) per router
+// 3) per route
 
-// Rate limiting may be configured to be...
-// global
-// based on identifier (ip, id, etc)
+// Configuration
+// 1) use a database
+// 2) use memory (default)
 
 // each user gets a bucket
 // each bucket has x tokens
 // bucket refills to full every y milliseconds
 // requests are ignored after x tokens run out
-exports.tokenBucket = function () {
+exports.tokenBucket = function (x, y, getTokenInfo, setTokenInfo) {
 
-}
-
-// each user gets a queue
-// queue has a max size x
-// single item from queue is processed at fixed interval y
-// ignores requests when queue is full
-exports.leakyBucket = function () {
-
+    return () => {
+        tokenInfo = getTokenInfo()
+    }
 }
 
 // each user gets a window
 // the window supports x requests
 // the window resets every y milliseconds
 // ignores requests after reaching the initial x requests in a window
-exports.fixedWindow = function () {
+exports.fixedWindow = function (x, y) {
 
 }
 
 // each user gets a log of requests
 // the log stores x requests
 // the log discards requests that are y milliseconds old 
-exports.slidingLog = function () {
+exports.slidingLog = function (x, y) {
 
 }
 
@@ -43,6 +39,6 @@ exports.slidingLog = function () {
 // for each request we calculate how far we have progressed in the current window
 // then we multiply current count by progess and previous count by 1 - progess
 // we allow a log through if count (truncated) is less than x
-exports.slidingWindow = function () {
+exports.slidingWindow = function (x, y) {
 
 }
